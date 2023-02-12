@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import Post from "../../Components/Post";
+import LiveScore from "../../Components/LiveScore";
+import AdContainer from "../../Components/AdContainer";
+import { FaFire, FaHome } from "react-icons/fa";
 
 const Header = styled.div`
   display: flex;
@@ -19,6 +23,7 @@ const HeaderLogo = styled.div`
   width: 250px;
   height: 100%;
   background: #939393;
+  margin-left: 15px;
 `;
 
 const LoginButton = styled.div`
@@ -26,24 +31,26 @@ const LoginButton = styled.div`
   align-items: center;
   justify-content: center;
   width: 100px;
-  height: 80%;
+  height: 60%;
   background: #292929;
   color: #fff;
   border-radius: 10px;
+  margin-right: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
 `;
 
 const Container = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
-  background: #969696;
+  /* background: #969696; */
   margin-top: 50px;
 `;
 
 const LeftSide = styled.div`
   display: flex;
   flex-direction: column;
-  background: #424242;
   width: 300px;
   height: 100%;
   margin-left: 100px;
@@ -52,43 +59,45 @@ const LeftSide = styled.div`
 
 const EnhancedButton = styled.div`
   display: flex;
-  width: 250px;
-  background: white;
+  width: 300px;
+  background: #424242;
   border-radius: 10px;
   height: 50px;
-  margin-top: 25px;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
   font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  color: #fff;
 `;
 
-const AdContainer = styled.div`
+const Ad = styled.div`
   display: flex;
-  width: 250px;
-  background: white;
+  width: 300px;
+  background: #d9d9d9;
   height: 500px;
   margin-top: 50px;
   border-radius: 10px;
 `;
 
 const Logo = styled.svg`
-  width: 50px;
+  width: 60px;
+  height: 20px;
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  background: #c2bfbf;
   width: 900px;
   height: 100%;
   margin-left: 70px;
+  align-items: center;
 `;
 
 const RightSide = styled.div`
   display: flex;
   flex-direction: column;
-  background: #424242;
   width: 350px;
   height: 100%;
   margin-left: 70px;
@@ -105,20 +114,32 @@ export const Home = () => {
     <>
       <Header>
         <HeaderLogo></HeaderLogo>
-        <LoginButton onClick={Login}>Login</LoginButton>
+        <LoginButton onClick={Login}>Zaloguj</LoginButton>
       </Header>
       <Container>
         <LeftSide>
           <EnhancedButton>
-            <Logo></Logo>DLA CIEBIE
+            <Logo>
+              <FaHome />
+            </Logo>
+            DLA CIEBIE
           </EnhancedButton>
           <EnhancedButton>
-            <Logo></Logo>POPULARNE
+            <Logo>
+              <FaFire />
+            </Logo>
+            POPULARNE
           </EnhancedButton>
-          <AdContainer> tu beda reklamki</AdContainer>
+          <Ad> tu beda reklamki</Ad>
         </LeftSide>
-        <Content></Content>
-        <RightSide></RightSide>
+        <Content>
+          <Post />
+          <Post />
+        </Content>
+        <RightSide>
+          <LiveScore />
+          <AdContainer />
+        </RightSide>
       </Container>
     </>
   );
