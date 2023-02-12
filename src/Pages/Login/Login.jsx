@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ const FormContainer = styled.div`
   height: 70%;
 `;
 
-const SingleRow = styled.div`
+const Row = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -40,24 +41,50 @@ const SingleRow = styled.div`
 `;
 
 const EnhancedButton = styled.button`
-  background: #fff;
-  color: #000;
+  background: #ff3737;
+  color: #fff;
   border: none;
   border-radius: 5px;
-  width: 100px;
-  height: 30px;
+  width: 150px;
+  height: 45px;
   align-self: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  x &:hover {
+    background: #adadad;
+  }
+`;
 
-  &:hover {
-    background: #ff0000;
-    color: #fff;
+const RegisterButton = styled.button`
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: underline;
+  margin-top: 12px;
+`;
+
+const EnhancedInput = styled.input`
+  background: #d9d9d9;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  width: 300px;
+  font-size: 24px;
+  padding-left: 10px;
+
+  &:focus {
+    border: none;
+    outline: none;
+    background: #f0f0f0;
   }
 `;
 
 export const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,37 +94,49 @@ export const Login = () => {
       .then((res) => {
         sessionStorage.setItem("token", res.data.content);
         console.log("response", res.data.content);
+        navigate("/");
       })
       .catch((err) => {
         console.log("error", err.response);
+        return (
+          <div>
+            <h1>Wystąpił błąd</h1>
+            <p>{err.response.data.message}</p>
+          </div>
+        );
       });
   };
 
   return (
     <>
       <Container>
-        <Title>Login</Title>
+        <Title>ZALOGUJ</Title>
         <FormContainer>
           <form>
-            <SingleRow>E-mail</SingleRow>
-            <SingleRow>
-              <input
+            <Row>E-mail</Row>
+            <Row>
+              <EnhancedInput
                 type="text"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </SingleRow>
-            <SingleRow>Hasło</SingleRow>
-            <SingleRow>
-              <input
-                type="text"
+            </Row>
+            <Row>Hasło</Row>
+            <Row>
+              <EnhancedInput
+                type="password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </SingleRow>
-            <SingleRow>
-              <EnhancedButton onClick={handleSubmit}>WYSLIJ</EnhancedButton>
-            </SingleRow>
+            </Row>
+            <Row>
+              <EnhancedButton onClick={handleSubmit}>Potwierdź</EnhancedButton>
+            </Row>
+            <Row>
+              <RegisterButton onClick={() => navigate("/register")}>
+                Zarejestruj
+              </RegisterButton>
+            </Row>
           </form>
         </FormContainer>
       </Container>
