@@ -22,8 +22,11 @@ const HeaderLogo = styled.div`
   justify-content: center;
   width: 250px;
   height: 100%;
-  background: #939393;
   margin-left: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  color: #939393;
 `;
 
 const LoginButton = styled.div`
@@ -33,7 +36,7 @@ const LoginButton = styled.div`
   width: 100px;
   height: 60%;
   background: #292929;
-  color: #fff;
+  color: #c9c9c9;
   border-radius: 10px;
   margin-right: 15px;
   font-family: "Montserrat", sans-serif;
@@ -45,7 +48,8 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   /* background: #969696; */
-  margin-top: 50px;
+  margin-top: 40px;
+  justify-content: center;
 `;
 
 const LeftSide = styled.div`
@@ -53,7 +57,6 @@ const LeftSide = styled.div`
   flex-direction: column;
   width: 300px;
   height: 100%;
-  margin-left: 100px;
   align-items: center;
 `;
 
@@ -89,9 +92,8 @@ const Logo = styled.svg`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 900px;
+  width: 820px;
   height: 100%;
-  margin-left: 70px;
   align-items: center;
 `;
 
@@ -100,7 +102,6 @@ const RightSide = styled.div`
   flex-direction: column;
   width: 350px;
   height: 100%;
-  margin-left: 70px;
 `;
 
 export const Home = () => {
@@ -113,7 +114,7 @@ export const Home = () => {
   return (
     <>
       <Header>
-        <HeaderLogo></HeaderLogo>
+        <HeaderLogo>EPICGOALZ</HeaderLogo>
         <LoginButton onClick={Login}>Zaloguj</LoginButton>
       </Header>
       <Container>
@@ -130,7 +131,7 @@ export const Home = () => {
             </Logo>
             POPULARNE
           </EnhancedButton>
-          <Ad> tu beda reklamki</Ad>
+          <Ad>tu beda reklamki</Ad>
         </LeftSide>
         <Content>
           <Post />

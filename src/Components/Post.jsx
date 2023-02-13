@@ -6,35 +6,103 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: #424242;
-  width: 900px;
+  width: 750px;
   height: 500px;
   border-radius: 20px;
   margin-top: 20px;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+`;
+
+const Header = styled.div`
+  display: flex;
+  width: 750px;
+  height: 50px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+`;
+
+const HeaderText = styled.div`
+  display: flex;
+  width: 63%;
+  height: 100%;
+  align-items: center;
+  margin-left: 3%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+`;
+
+const HeaderHashtag = styled.div`
+  display: flex;
+  width: 10%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: 12px;
+`;
+
+const HashtagContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  border-radius: 10px;
+  height: 20px;
+  width: 50px;
+`;
+
+const HeaderAuthor = styled.div`
+  display: flex;
+  width: 10%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: 12px;
+`;
+
+const HeaderDate = styled.div`
+  display: flex;
+  width: 12%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: 870px;
-  height: 370px;
-  border-radius: 16px;
+  width: 750px;
+  height: 410px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  align-items: center;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
 `;
 
 const Footer = styled.div`
   display: flex;
-  width: 870px;
+  width: 730px;
   height: 50px;
   background: #d9d9d9;
-  border-radius: 16px;
+  border-radius: 14px;
   align-items: center;
+  position: absolute;
+  margin-top: 390px;
 `;
 
 const EnhancedButton = styled.button`
   display: flex;
-  width: 150px;
+  width: 140px;
   border-radius: 15px;
   height: 40px;
   border: none;
@@ -52,15 +120,52 @@ const Logo = styled.svg`
   margin-left: 8px;
 `;
 
-const Post = () => {
+const LikeCounter = styled.div`
+  display: flex;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  background: #424242;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 35px;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Post = (props) => {
   return (
     <Container>
-      <Content></Content>
+      <Header>
+        <HeaderText>Mój stary miał nową kobiete niesamowite</HeaderText>
+        <HeaderHashtag>
+          <HashtagContainer>#dupa</HashtagContainer>
+        </HeaderHashtag>
+        <HeaderAuthor>pawulon</HeaderAuthor>
+        <HeaderDate>20 minut temu</HeaderDate>
+      </Header>
+      <Content>
+        nie da sie wygrac gry na gangplanku zawsze mnie troluja kurwiszony
+        panowie panowie no nie da sie wygrac w gre komputerowa znie da sie
+        wygrac gry na gangplanku zawsze mnie troluja kurwiszony panowie panowie
+        no nie da sie wygrac w gre komputerowa nie da sie wygrac gry na
+        gangplanku zawsze mnie troluja kurwiszony panowie panowie no nie da sie
+        wygrac w gre komputerowa nie da sie wygrac gry na gangplanku zawsze mnie
+        troluja kurwiszony panowie panowie no nie da sie wygrac w gre
+        komputerowa
+      </Content>
       <Footer>
         <EnhancedButton>
           <Logo>
             <FaHeart size={25} />
           </Logo>
+          <LikeCounter>14</LikeCounter>
           LUBIĘ TO
         </EnhancedButton>
       </Footer>
