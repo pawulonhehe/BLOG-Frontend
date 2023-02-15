@@ -31,6 +31,15 @@ const HeaderLogo = styled.div`
   color: #939393;
 `;
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 100%;
+`;
+
 const LoginButton = styled.div`
   display: flex;
   align-items: center;
@@ -109,8 +118,12 @@ const RightSide = styled.div`
 export const Home = () => {
   const navigate = useNavigate();
 
-  const Login = () => {
+  const NavigateToLogin = () => {
     navigate("/login");
+  };
+
+  const NavigateToCms = () => {
+    navigate("/cms");
   };
 
   const [posts, setPosts] = React.useState([]);
@@ -131,7 +144,10 @@ export const Home = () => {
     <>
       <Header>
         <HeaderLogo>EPICGOALZ</HeaderLogo>
-        <LoginButton onClick={Login}>Zaloguj</LoginButton>
+        <ButtonsContainer>
+          <LoginButton onClick={NavigateToCms}>Cms</LoginButton>
+          <LoginButton onClick={NavigateToLogin}>Zaloguj</LoginButton>
+        </ButtonsContainer>
       </Header>
       <Container>
         <LeftSide>
