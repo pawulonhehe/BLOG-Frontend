@@ -143,29 +143,20 @@ const Post = (props) => {
   return (
     <Container>
       <Header>
-        <HeaderText>Mój stary miał nową kobiete niesamowite</HeaderText>
+        <HeaderText>{props.title}</HeaderText>
         <HeaderHashtag>
-          <HashtagContainer>#dupa</HashtagContainer>
+          <HashtagContainer>{props.category_name}</HashtagContainer>
         </HeaderHashtag>
-        <HeaderAuthor>pawulon</HeaderAuthor>
-        <HeaderDate>20 minut temu</HeaderDate>
+        <HeaderAuthor>{props.author}</HeaderAuthor>
+        <HeaderDate>{props.date}</HeaderDate>
       </Header>
-      <Content>
-        nie da sie wygrac gry na gangplanku zawsze mnie troluja kurwiszony
-        panowie panowie no nie da sie wygrac w gre komputerowa znie da sie
-        wygrac gry na gangplanku zawsze mnie troluja kurwiszony panowie panowie
-        no nie da sie wygrac w gre komputerowa nie da sie wygrac gry na
-        gangplanku zawsze mnie troluja kurwiszony panowie panowie no nie da sie
-        wygrac w gre komputerowa nie da sie wygrac gry na gangplanku zawsze mnie
-        troluja kurwiszony panowie panowie no nie da sie wygrac w gre
-        komputerowa
-      </Content>
+      <Content>{props.content}</Content>
       <Footer>
         <EnhancedButton>
           <Logo>
             <FaHeart size={25} />
           </Logo>
-          <LikeCounter>14</LikeCounter>
+          <LikeCounter>{props.likes}</LikeCounter>
           LUBIĘ TO
         </EnhancedButton>
       </Footer>

@@ -5,6 +5,8 @@ import Post from "../../Components/Post";
 import LiveScore from "../../Components/LiveScore";
 import AdContainer from "../../Components/AdContainer";
 import { FaFire, FaHome } from "react-icons/fa";
+import axios from "axios";
+import { useEffect } from "react";
 
 const Header = styled.div`
   display: flex;
@@ -111,6 +113,20 @@ export const Home = () => {
     navigate("/login");
   };
 
+  const [posts, setPosts] = React.useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:1234/posts")
+      .then((res) => {
+        setPosts(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <Header>
@@ -134,8 +150,17 @@ export const Home = () => {
           <Ad>tu beda reklamki</Ad>
         </LeftSide>
         <Content>
-          <Post />
-          <Post />
+          {posts.map((post) => (
+            <Post
+              key={post.id}
+              title={post.title}
+              content={post.content}
+              author={post.author}
+              date={post.time_date}
+              likes={post.likes}
+              category_name={post.category_name}
+            />
+          ))}
         </Content>
         <RightSide>
           <LiveScore />
