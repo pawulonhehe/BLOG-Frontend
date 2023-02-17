@@ -16,6 +16,10 @@ const Header = styled.div`
   height: 70px;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  position: fixed;
+  top: 0%;
+  z-index: 99;
 `;
 
 const HeaderLogo = styled.div`
@@ -59,8 +63,10 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   /* background: #969696; */
-  margin-top: 40px;
+  margin-top: 80px;
   justify-content: center;
+  align-items: center;
+  margin-right: 2222px;
 `;
 
 const LeftSide = styled.div`
@@ -69,6 +75,12 @@ const LeftSide = styled.div`
   width: 300px;
   height: 100%;
   align-items: center;
+  position: sticky;
+  position: fixed;
+  top: 0%;
+  left: 11%;
+  margin-top: 80px;
+  z-index: 2;
 `;
 
 const EnhancedButton = styled.div`
@@ -106,6 +118,7 @@ const Content = styled.div`
   width: 820px;
   height: 100%;
   align-items: center;
+  margin-right: 50px;
 `;
 
 const RightSide = styled.div`
@@ -113,10 +126,28 @@ const RightSide = styled.div`
   flex-direction: column;
   width: 350px;
   height: 100%;
+  // i want this component, to be sticky, but interact with other containers and
+  // not with the whole page
+  position: sticky;
+  position: fixed;
+  top: 0%;
+  right: 11%;
+  margin-top: 80px;
+  align-items: center;
+  z-index: 2;
 `;
 
 export const Home = () => {
   const navigate = useNavigate();
+  const [postsType, setPostsType] = React.useState(true);
+
+  const changePostsTypeToFY = () => {
+    setPostsType(false);
+  };
+
+  const changePostsTypeToPopular = () => {
+    setPostsType(true);
+  };
 
   const NavigateToLogin = () => {
     navigate("/login");
@@ -126,14 +157,13 @@ export const Home = () => {
     navigate("/cms");
   };
 
-  const [posts, setPosts] = React.useState([]);
+  const [popularPosts, setPopularPosts] = React.useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:1234/posts")
       .then((res) => {
-        setPosts(res.data);
-        console.log(res.data);
+        setPopularPosts(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -151,13 +181,13 @@ export const Home = () => {
       </Header>
       <Container>
         <LeftSide>
-          <EnhancedButton>
+          <EnhancedButton onClick={changePostsTypeToFY}>
             <Logo>
               <FaHome />
             </Logo>
             DLA CIEBIE
           </EnhancedButton>
-          <EnhancedButton>
+          <EnhancedButton onClick={changePostsTypeToPopular}>
             <Logo>
               <FaFire />
             </Logo>
@@ -166,17 +196,23 @@ export const Home = () => {
           <Ad>tu beda reklamki</Ad>
         </LeftSide>
         <Content>
-          {posts.map((post) => (
-            <Post
-              key={post.id}
-              title={post.title}
-              content={post.content}
-              author={post.author}
-              date={post.time_date}
-              likes={post.likes}
-              category_name={post.category_name}
-            />
-          ))}
+          {postsType ? (
+            <>
+              {popularPosts.map((post) => (
+                <Post
+                  key={post.id}
+                  title={post.title}
+                  content={post.content}
+                  author={post.author}
+                  date={post.time_date}
+                  likes={post.likes}
+                  category_name={post.category_name}
+                />
+              ))}
+            </>
+          ) : (
+            <h1>Dla Ciebie</h1>
+          )}
         </Content>
         <RightSide>
           <LiveScore />

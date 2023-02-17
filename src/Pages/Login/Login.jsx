@@ -6,22 +6,51 @@ import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
+  flex-direction: row;
+`;
+
+const LoginContainer = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #424242;
   color: #fff;
-  width: 400px;
-  height: 400px;
-  border-radius: 20px;
+  background: #000000af;
+  width: 40%;
+  height: 100vh;
+  position: absolute;
+`;
+
+const Background = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: url(https://i.imgur.com/AsyWfzH.jpeg);
 `;
 
 const Title = styled.div`
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
   width: 100%;
   text-align: center;
-  height: 10%;
+  height: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 50px;
+`;
+
+const TitleOfSite = styled.div`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  color: #939393;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+  top: 0;
+  position: absolute;
+  margin-top: 50px;
 `;
 
 const FormContainer = styled.div`
@@ -30,7 +59,7 @@ const FormContainer = styled.div`
   align-items: center;
   justify-content: center;
   max-width: 400px;
-  height: 70%;
+  height: 30%;
 `;
 
 const Row = styled.div`
@@ -108,8 +137,9 @@ export const Login = () => {
   };
 
   return (
-    <>
-      <Container>
+    <Container>
+      <LoginContainer>
+        <TitleOfSite>EPICGOALZ</TitleOfSite>
         <Title>ZALOGUJ</Title>
         <FormContainer>
           <form>
@@ -139,7 +169,8 @@ export const Login = () => {
             </Row>
           </form>
         </FormContainer>
-      </Container>
-    </>
+      </LoginContainer>
+      <Background />
+    </Container>
   );
 };

@@ -23,6 +23,8 @@ body {
     rgba(15, 25, 37, 1) 68%,
     rgba(0, 0, 0, 1) 100%
   );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {

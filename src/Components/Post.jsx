@@ -140,6 +140,7 @@ const LikeCounter = styled.div`
 `;
 
 const Post = (props) => {
+  console.log(props);
   return (
     <Container>
       <Header>
