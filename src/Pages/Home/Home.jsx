@@ -126,8 +126,6 @@ const RightSide = styled.div`
   flex-direction: column;
   width: 350px;
   height: 100%;
-  // i want this component, to be sticky, but interact with other containers and
-  // not with the whole page
   position: sticky;
   position: fixed;
   top: 0%;

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Tag from "../../Components/Tag";
 
 const Container = styled.div`
   display: flex;
@@ -53,6 +54,7 @@ const CenterMenu = styled.div`
   height: 100%;
   background: #8f4343;
   color: #c9c9c9;
+  flex-direction: column;
 `;
 
 const Dashboard = styled.div`
@@ -65,8 +67,30 @@ const Dashboard = styled.div`
   color: #c9c9c9;
 `;
 
+const MainContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 70%;
+  background: #835d5d;
+  color: #c9c9c9;
+  flex-direction: column;
+`;
+
 export const Cms = () => {
   const [user, setUser] = React.useState(null);
+  const [title, setTitle] = React.useState();
+  const [content, setContent] = React.useState();
+  const [tags, setTags] = React.useState();
+  const [image, setImage] = React.useState();
+  const [currentPage, setCurrentPage] = React.useState(false);
+
+  const changeCurrentPageToPosts = () => {
+    setCurrentPage(true);
+  };
+
+  const changeCurrentPageToTags = () => {
+    setCurrentPage(false);
+  };
 
   React.useEffect(() => {
     axios
@@ -81,6 +105,25 @@ export const Cms = () => {
       });
   }, []);
 
+  axios
+    .post(
+      "http://localhost:1234/api/addPost",
+      {
+        title: title,
+        content: content,
+        tags: tags,
+        image: image,
+      },
+      { withCredentials: true }
+    )
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  console.log(currentPage);
   return (
     <Container>
       <LeftSideMenu>
@@ -93,12 +136,61 @@ export const Cms = () => {
           />
           <p>pawulon</p>
         </UserContainer>
-        <EnhancedButton>Home</EnhancedButton>
-        <EnhancedButton>Posty</EnhancedButton>
-        <EnhancedButton>Uzytnicy</EnhancedButton>
+
+        <EnhancedButton onClick={changeCurrentPageToPosts}>
+          Posty
+        </EnhancedButton>
+        <EnhancedButton onClick={changeCurrentPageToTags}>Tagi</EnhancedButton>
       </LeftSideMenu>
       <CenterMenu>
         <Dashboard>staty jakies</Dashboard>
+        <MainContainer>
+          {currentPage ? (
+            <>
+              <form>
+                <input
+                  type="text"
+                  placeholder="tytul"
+                  onChange={(event, newValue) => {
+                    setTitle(newValue);
+                    console.log(title);
+                  }}
+                />
+                <input
+                  type="text"
+                  placeholder="tresc"
+                  onChange={(event, newValue) => {
+                    setContent(newValue);
+                    console.log(content);
+                  }}
+                />
+                <input
+                  type="text"
+                  placeholder="tagi"
+                  onChange={(event, newValue) => {
+                    setTags(newValue);
+                    console.log(tags);
+                  }}
+                />
+                <input
+                  type="file"
+                  placeholder="zdjecie"
+                  onChange={(event, newValue) => {
+                    setImage(newValue);
+                    console.log(image);
+                  }}
+                />
+              </form>
+            </>
+          ) : (
+            <>
+              <Tag name={"aha"} />
+              <Tag name={"kubica"} />
+              <Tag name={"alonso"} />
+              <Tag name={"elo"} />
+            </>
+          )}
+        </MainContainer>
       </CenterMenu>
     </Container>
   );
