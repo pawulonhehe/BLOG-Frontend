@@ -117,6 +117,12 @@ const EnhancedButton = styled.button`
   font-weight: 900;
   color: #3f3f3f;
   background: #d9d9d9;
+
+  &:hover {
+    cursor: pointer;
+    background: #ff3737;
+    color: #fff;
+  }
 `;
 
 const Logo = styled.svg`

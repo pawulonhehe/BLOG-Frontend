@@ -57,6 +57,11 @@ const LoginButton = styled.div`
   margin-right: 15px;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
+
+  &:hover {
+    cursor: pointer;
+    background: #424242;
+  }
 `;
 
 const Container = styled.div`
@@ -97,6 +102,11 @@ const EnhancedButton = styled.div`
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   color: #fff;
+
+  &:hover {
+    cursor: pointer;
+    background: #616161;
+  }
 `;
 
 const Ad = styled.div`
@@ -174,7 +184,7 @@ export const Home = () => {
       <Header>
         <HeaderLogo>EPICGOALZ</HeaderLogo>
         <ButtonsContainer>
-          <LoginButton onClick={NavigateToCms}>Cms</LoginButton>
+          <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
           <LoginButton onClick={NavigateToLogin}>Zaloguj</LoginButton>
         </ButtonsContainer>
       </Header>
