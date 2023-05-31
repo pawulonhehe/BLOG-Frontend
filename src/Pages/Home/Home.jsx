@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Post from "../../Components/Post";
 import LiveScore from "../../Components/LiveScore";
 import AdContainer from "../../Components/AdContainer";
+import LeftAdContainer from "../../Components/LeftAdContainer";
 import { FaFire, FaHome } from "react-icons/fa";
 import axios from "axios";
 import { useEffect } from "react";
@@ -191,7 +192,8 @@ export const Home = () => {
             </Logo>
             POPULARNE
           </EnhancedButton>
-          <Ad>tu beda reklamki</Ad>
+          {/* <Ad>tu beda reklamki</Ad> */}
+          <LeftAdContainer />
         </LeftSide>
         <Content>
           {postsType ? (

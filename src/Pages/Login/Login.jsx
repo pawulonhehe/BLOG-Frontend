@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaLock, FaMailBulk } from "react-icons/fa";
 
 const Container = styled.div`
   display: flex;
@@ -67,6 +68,8 @@ const Row = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 5px;
+  display: flex;
+  flex-direction: row;
 `;
 
 const EnhancedButton = styled.button`
@@ -91,23 +94,40 @@ const RegisterButton = styled.button`
   color: #fff;
   font-size: 16px;
   text-decoration: underline;
-  margin-top: 12px;
+  margin-top: 16px;
 `;
 
 const EnhancedInput = styled.input`
-  background: #d9d9d9;
+  background: #b8b8b8;
   border: none;
-  border-radius: 8px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   height: 40px;
   width: 300px;
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 600;
   padding-left: 10px;
+  margin-top: 15px;
 
   &:focus {
     border: none;
     outline: none;
-    background: #f0f0f0;
+    background: #dddddd;
   }
+`;
+
+const IconContainer = styled.div`
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 20%;
+  margin-top: 15px;
+  height: 42px;
+  align-items: center;
+  justify-content: space-around;
 `;
 
 export const Login = () => {
@@ -140,23 +160,29 @@ export const Login = () => {
     <Container>
       <LoginContainer>
         <TitleOfSite>EPICGOALZ</TitleOfSite>
-        <Title>ZALOGUJ</Title>
+        <Title>Zaloguj</Title>
         <FormContainer>
           <form>
-            <Row>E-mail</Row>
             <Row>
+              <IconContainer>
+                <FaMailBulk />
+              </IconContainer>
               <EnhancedInput
                 type="text"
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
+                placeholder="e-mail"
               />
             </Row>
-            <Row>Hasło</Row>
             <Row>
+              <IconContainer>
+                <FaLock />
+              </IconContainer>
               <EnhancedInput
                 type="password"
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
+                placeholder="hasło"
               />
             </Row>
             <Row>

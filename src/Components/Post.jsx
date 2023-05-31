@@ -50,10 +50,10 @@ const HashtagContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: red;
+  background: #ff3737;
   border-radius: 10px;
   height: 20px;
-  width: 50px;
+  width: 60px;
 `;
 
 const HeaderAuthor = styled.div`
@@ -63,7 +63,7 @@ const HeaderAuthor = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #fff;
+  color: #7a1f1f;
   font-size: 12px;
 `;
 
@@ -85,8 +85,13 @@ const Content = styled.div`
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   align-items: center;
+  background: url("https://i.imgur.com/APY338v.png") center bottom;
   color: #fff;
   font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Footer = styled.div`
@@ -110,13 +115,14 @@ const EnhancedButton = styled.button`
   align-items: center;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  color: #424242;
+  color: #3f3f3f;
+  background: #d9d9d9;
 `;
 
 const Logo = styled.svg`
   width: 40px;
   height: 25px;
-  color: #424242;
+  color: #3f3f3f;
   margin-left: 8px;
 `;
 
@@ -129,7 +135,7 @@ const LikeCounter = styled.div`
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 12px;
-  background: #424242;
+  background: #ff3737;
   position: absolute;
   top: 0;
   left: 0;

@@ -5,24 +5,24 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: #d9d9d9;
-  width: 350px;
-  height: 400px;
+  width: 300px;
+  height: 700px;
   border-radius: 20px;
   margin-top: 20px;
-  background: url("https://i.pinimg.com/564x/a0/58/75/a0587559efb03b87c546a88f97f37e91.jpg")
-    center top no-repeat;
+  background: url("https://i.pinimg.com/564x/ac/65/d1/ac65d123ead7c59a3096dad843eb9919.jpg")
+    center bottom no-repeat;
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 24px;
   text-align: center;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 
 const Article = styled.div`
   display: flex;
   width: 100%;
-  margin-left: 20px;
+  justify-content: center;
 `;
 
 const SubArticle = styled.div`
@@ -31,16 +31,16 @@ const SubArticle = styled.div`
   margin-left: 20px;
   font-size: 18px;
   color: #9c9c9c;
-  margin-bottom: 10px;
+  justify-content: center;
 `;
 
-const AdContainer = () => {
+const LeftAdContainer = () => {
   return (
     <Container>
-      <Article>Barbie</Article>
-      <SubArticle>w kinach od 21 lipca</SubArticle>
+      <Article>ULTRACE 2023</Article>
+      <SubArticle>10-11 czerwca</SubArticle>
     </Container>
   );
 };
 
-export default AdContainer;
+export default LeftAdContainer;
