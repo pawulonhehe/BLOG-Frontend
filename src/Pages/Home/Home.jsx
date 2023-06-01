@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import Post from "../../Components/Post";
-import LiveScore from "../../Components/LiveScore";
-import AdContainer from "../../Components/AdContainer";
-import LeftAdContainer from "../../Components/LeftAdContainer";
+import Post from "../../Components/Post/Post";
+import LiveScore from "../../Components/LiveScore/LiveScore";
+import AdContainer from "../../Components/AdContainer/AdContainer";
+import LeftAdContainer from "../../Components/LeftAdContainer/LeftAdContainer";
 import { FaFire, FaHome } from "react-icons/fa";
 import axios from "axios";
 import { useEffect } from "react";

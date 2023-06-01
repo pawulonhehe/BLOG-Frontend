@@ -56,17 +56,6 @@ const HashtagContainer = styled.div`
   width: 60px;
 `;
 
-const HeaderAuthor = styled.div`
-  display: flex;
-  width: 10%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #7a1f1f;
-  font-size: 12px;
-`;
-
 const HeaderDate = styled.div`
   display: flex;
   width: 12%;
@@ -75,6 +64,7 @@ const HeaderDate = styled.div`
   justify-content: center;
   color: #fff;
   font-size: 12px;
+  margin-left: 50px;
 `;
 
 const Content = styled.div`
@@ -103,6 +93,7 @@ const Footer = styled.div`
   align-items: center;
   position: absolute;
   margin-top: 390px;
+  justify-content: space-between;
 `;
 
 const EnhancedButton = styled.button`
@@ -151,6 +142,22 @@ const LikeCounter = styled.div`
   justify-content: center;
 `;
 
+const AuthorContainer = styled.div`
+  display: flex;
+  width: 100px;
+  height: 30px;
+  border-radius: 12px;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #ff3737;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 12px;
+  background: #424242;
+  justify-content: center;
+`;
+
 const Post = (props) => {
   console.log(props);
   return (
@@ -160,7 +167,6 @@ const Post = (props) => {
         <HeaderHashtag>
           <HashtagContainer>{props.category_name}</HashtagContainer>
         </HeaderHashtag>
-        <HeaderAuthor>{props.author}</HeaderAuthor>
         <HeaderDate>{props.date}</HeaderDate>
       </Header>
       <Content>{props.content}</Content>
@@ -172,6 +178,7 @@ const Post = (props) => {
           <LikeCounter>{props.likes}</LikeCounter>
           LUBIĘ TO
         </EnhancedButton>
+        <AuthorContainer>{props.author}</AuthorContainer>
       </Footer>
     </Container>
   );

@@ -3,9 +3,13 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  background: #171717;
-  color: #c9c9c9;
-  border-radius: 3px;
+  background: #ff3737;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  align-items: center;
+  border-radius: 10px;
   width: 100px;
   height: 25px;
   justify-content: center;
