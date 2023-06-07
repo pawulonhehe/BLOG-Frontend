@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FaHeart } from "react-icons/fa";
+import moment from "moment";
 
 const Container = styled.div`
   display: flex;
@@ -58,13 +59,14 @@ const HashtagContainer = styled.div`
 
 const HeaderDate = styled.div`
   display: flex;
-  width: 12%;
+  width: 15%;
   height: 100%;
   align-items: center;
   justify-content: center;
   color: #fff;
   font-size: 12px;
-  margin-left: 50px;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 60px;
 `;
 
 const Content = styled.div`
@@ -159,7 +161,7 @@ const AuthorContainer = styled.div`
 `;
 
 const Post = (props) => {
-  console.log(props);
+  const dateString = moment(props.date).endOf("day").fromNow();
   return (
     <Container>
       <Header>
@@ -167,7 +169,7 @@ const Post = (props) => {
         <HeaderHashtag>
           <HashtagContainer>{props.category_name}</HashtagContainer>
         </HeaderHashtag>
-        <HeaderDate>{props.date}</HeaderDate>
+        <HeaderDate>{dateString}</HeaderDate>
       </Header>
       <Content>{props.content}</Content>
       <Footer>

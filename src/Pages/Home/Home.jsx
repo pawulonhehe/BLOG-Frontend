@@ -81,12 +81,92 @@ const LeftSide = styled.div`
   width: 300px;
   height: 100%;
   align-items: center;
-  position: sticky;
   position: fixed;
   top: 0%;
   left: 11%;
   margin-top: 80px;
   z-index: 2;
+
+  /* @media (max-width: 1520px) {
+    position: relative;
+    left: 0%;
+    margin-top: 0px;
+    margin-right: 75px;
+  } */
+
+  @media (max-width: 1850px) {
+    position: fixed;
+    top: 0%;
+    left: 10%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1800px) {
+    position: fixed;
+    top: 0%;
+    left: 9%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1750px) {
+    position: fixed;
+    top: 0%;
+    left: 8%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1700px) {
+    position: fixed;
+    top: 0%;
+    left: 7%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1650px) {
+    position: fixed;
+    top: 0%;
+    left: 6%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1600px) {
+    position: fixed;
+    top: 0%;
+    left: 5%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1550px) {
+    position: fixed;
+    top: 0%;
+    left: 4%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1500px) {
+    position: fixed;
+    top: 0%;
+    left: 3%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1450px) {
+    position: fixed;
+    top: 0%;
+    left: 1%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1400px) {
+    position: fixed;
+    top: 0%;
+    left: -1%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1350px) {
+    display: none;
+  }
 `;
 
 const EnhancedButton = styled.div`
@@ -109,15 +189,6 @@ const EnhancedButton = styled.div`
   }
 `;
 
-const Ad = styled.div`
-  display: flex;
-  width: 300px;
-  background: #d9d9d9;
-  height: 500px;
-  margin-top: 50px;
-  border-radius: 10px;
-`;
-
 const Logo = styled.svg`
   width: 60px;
   height: 20px;
@@ -137,13 +208,86 @@ const RightSide = styled.div`
   flex-direction: column;
   width: 350px;
   height: 100%;
-  position: sticky;
-  position: fixed;
   top: 0%;
   right: 11%;
+  position: fixed;
   margin-top: 80px;
   align-items: center;
   z-index: 2;
+
+  @media (max-width: 1850px) {
+    position: fixed;
+    top: 0%;
+    right: 10%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1800px) {
+    position: fixed;
+    top: 0%;
+    right: 9%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1750px) {
+    position: fixed;
+    top: 0%;
+    right: 8%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1700px) {
+    position: fixed;
+    top: 0%;
+    right: 7%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1650px) {
+    position: fixed;
+    top: 0%;
+    right: 6%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1600px) {
+    position: fixed;
+    top: 0%;
+    right: 5%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1550px) {
+    position: fixed;
+    top: 0%;
+    right: 4%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1500px) {
+    position: fixed;
+    top: 0%;
+    right: 3%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1450px) {
+    position: fixed;
+    top: 0%;
+    right: 1%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1400px) {
+    position: fixed;
+    top: 0%;
+    right: -1%;
+    bottom: 0%;
+  }
+
+  @media (max-width: 1350px) {
+    display: none;
+  }
 `;
 
 export const Home = () => {

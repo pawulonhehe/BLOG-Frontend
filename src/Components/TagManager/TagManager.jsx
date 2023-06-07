@@ -98,6 +98,19 @@ const TagManager = () => {
       });
   };
 
+  // const DeleteTag = () => {
+  //   axios
+  //     .delete("http://localhost:1234/tags/deleteTag", {
+  //       name: NewTag,
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
   useEffect(() => {
     axios
       .get("http://localhost:1234/tags")
@@ -123,7 +136,6 @@ const TagManager = () => {
             type="text"
             onChange={(e) => {
               setNewTag(e.target.value);
-              console.log(NewTag);
             }}
           />
           <EnhancedButton onClick={AddTag}>Dodaj</EnhancedButton>
