@@ -3,6 +3,7 @@ import Tag from "../Tag/Tag";
 import styled from "styled-components";
 import axios from "axios";
 import { useState } from "react";
+import Modal from "../../Components/Modal/Modal";
 
 const Container = styled.div`
   display: flex;
@@ -86,30 +87,22 @@ const TagManager = () => {
   const [NewTag, setNewTag] = useState("");
 
   const AddTag = () => {
-    axios
-      .post("http://localhost:1234/tags/addTag", {
-        name: NewTag,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (NewTag !== "") {
+      axios
+        .post("http://localhost:1234/tags/addTag", {
+          name: NewTag,
+        })
+        .then((res) => {
+          console.log(res);
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      alert("Wpisz nazwę tagu!");
+    }
   };
-
-  // const DeleteTag = () => {
-  //   axios
-  //     .delete("http://localhost:1234/tags/deleteTag", {
-  //       name: NewTag,
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   useEffect(() => {
     axios
@@ -127,7 +120,7 @@ const TagManager = () => {
       <Title>Istniejące tagi</Title>
       <TagContainer>
         {ExistingTags.map((tag) => {
-          return <Tag name={tag.name} />;
+          return <Tag {...tag} />;
         })}
         <Title>Stwórz nowy tag</Title>
         <AddTagContainer>

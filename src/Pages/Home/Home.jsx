@@ -297,15 +297,12 @@ export const Home = () => {
   const changePostsTypeToFY = () => {
     setPostsType(false);
   };
-
   const changePostsTypeToPopular = () => {
     setPostsType(true);
   };
-
   const NavigateToLogin = () => {
     navigate("/login");
   };
-
   const NavigateToCms = () => {
     navigate("/cms");
   };
@@ -346,7 +343,6 @@ export const Home = () => {
             </Logo>
             POPULARNE
           </EnhancedButton>
-          {/* <Ad>tu beda reklamki</Ad> */}
           <LeftAdContainer />
         </LeftSide>
         <Content>
