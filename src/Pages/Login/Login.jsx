@@ -141,7 +141,7 @@ export const Login = () => {
     axios
       .post("http://localhost:1234/auth/login", user)
       .then((res) => {
-        sessionStorage.setItem("token", res.data.content);
+        localStorage.setItem("token", res.data.content);
         console.log("response", res.data.content);
         navigate("/");
       })
