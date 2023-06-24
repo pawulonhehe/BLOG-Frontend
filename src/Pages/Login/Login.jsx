@@ -149,7 +149,7 @@ export const Login = () => {
         console.log("error", err.response);
         return (
           <div>
-            <h1>Wystąpił błąd</h1>
+            <h1>Error occured</h1>
             <p>{err.response.data.message}</p>
           </div>
         );
@@ -160,7 +160,7 @@ export const Login = () => {
     <Container>
       <LoginContainer>
         <TitleOfSite>EPICGOALZ</TitleOfSite>
-        <Title>Zaloguj</Title>
+        <Title>Login</Title>
         <FormContainer>
           <form>
             <Row>
@@ -186,11 +186,11 @@ export const Login = () => {
               />
             </Row>
             <Row>
-              <EnhancedButton onClick={handleSubmit}>Potwierdź</EnhancedButton>
+              <EnhancedButton onClick={handleSubmit}>Apply</EnhancedButton>
             </Row>
             <Row>
               <RegisterButton onClick={() => navigate("/register")}>
-                Zarejestruj
+                Register
               </RegisterButton>
             </Row>
           </form>

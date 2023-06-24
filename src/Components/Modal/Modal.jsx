@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 const Modal = () => {
-  return <h1> Jesteś pewien? </h1>;
+  return <h1> Are you sure? </h1>;
 };
 
 export default Modal;

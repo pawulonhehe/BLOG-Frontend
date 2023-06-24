@@ -326,7 +326,7 @@ export const Home = () => {
         <HeaderLogo>EPICGOALZ</HeaderLogo>
         <ButtonsContainer>
           <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
-          <LoginButton onClick={NavigateToLogin}>Zaloguj</LoginButton>
+          <LoginButton onClick={NavigateToLogin}>Log in</LoginButton>
         </ButtonsContainer>
       </Header>
       <Container>
@@ -335,13 +335,13 @@ export const Home = () => {
             <Logo>
               <FaHome />
             </Logo>
-            DLA CIEBIE
+            FOR YOU
           </EnhancedButton>
           <EnhancedButton onClick={changePostsTypeToPopular}>
             <Logo>
               <FaFire />
             </Logo>
-            POPULARNE
+            POPULAR
           </EnhancedButton>
           <LeftAdContainer />
         </LeftSide>
@@ -361,7 +361,7 @@ export const Home = () => {
               ))}
             </>
           ) : (
-            <h1>Dla Ciebie</h1>
+            <h1>For you</h1>
           )}
         </Content>
         <RightSide>

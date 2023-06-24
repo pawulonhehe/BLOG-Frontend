@@ -91,7 +91,7 @@ const PostManager = () => {
             setImage(newValue);
           }}
         />
-        <button onClick={handleAddPost}>Dodaj post</button>
+        <button onClick={handleAddPost}>Add post</button>
       </form>
     </div>
   );

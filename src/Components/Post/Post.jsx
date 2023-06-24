@@ -178,7 +178,7 @@ const Post = (props) => {
             <FaHeart size={25} />
           </Logo>
           <LikeCounter>{props.likes}</LikeCounter>
-          LUBIĘ TO
+          LIKE
         </EnhancedButton>
         <AuthorContainer>{props.author}</AuthorContainer>
       </Footer>

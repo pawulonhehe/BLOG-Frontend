@@ -99,12 +99,12 @@ export const Cms = () => {
           <p>pawulon</p>
         </UserContainer>
         <EnhancedButton onClick={changeCurrentPageToPosts}>
-          Posty
+          Posts
         </EnhancedButton>
-        <EnhancedButton onClick={changeCurrentPageToTags}>Tagi</EnhancedButton>
+        <EnhancedButton onClick={changeCurrentPageToTags}>Tags</EnhancedButton>
       </LeftSideMenu>
       <CenterMenu>
-        <Dashboard>staty jakies</Dashboard>
+        <Dashboard>some stats</Dashboard>
         <MainContainer>
           {currentPage ? <PostManager /> : <TagManager />}
         </MainContainer>

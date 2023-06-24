@@ -38,7 +38,7 @@ const AdContainer = () => {
   return (
     <Container>
       <Article>Barbie</Article>
-      <SubArticle>w kinach od 21 lipca</SubArticle>
+      <SubArticle>Returns to theaters 21 july</SubArticle>
     </Container>
   );
 };

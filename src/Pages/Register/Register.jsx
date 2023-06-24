@@ -149,7 +149,7 @@ export const Register = () => {
     <>
       <RegisterContainer>
         <TitleOfSite>EPICGOALZ</TitleOfSite>
-        <Title>Zarejestruj</Title>
+        <Title>Register</Title>
         <FormContainer>
           <form>
             <Row>
@@ -186,11 +186,11 @@ export const Register = () => {
               />
             </Row>
             <Row>
-              <EnhancedButton onClick={handleSubmit}>Potwierdź</EnhancedButton>
+              <EnhancedButton onClick={handleSubmit}>Apply</EnhancedButton>
             </Row>
             <Row>
               <LoginButton onClick={() => navigate("/login")}>
-                Zaloguj
+                Log in
               </LoginButton>
             </Row>
           </form>

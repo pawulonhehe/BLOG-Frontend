@@ -38,7 +38,7 @@ const LeftAdContainer = () => {
   return (
     <Container>
       <Article>ULTRACE 2023</Article>
-      <SubArticle>10-11 czerwca</SubArticle>
+      <SubArticle>10-11 july</SubArticle>
     </Container>
   );
 };
