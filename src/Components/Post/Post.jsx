@@ -13,6 +13,14 @@ const Container = styled.div`
   margin-top: 20px;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 500px;
+  }
+
+  @media (max-height: 768px) {
+    width: 500px;
+  }
 `;
 
 const Header = styled.div`
@@ -23,6 +31,13 @@ const Header = styled.div`
   border-top-right-radius: 16px;
   align-items: center;
   font-family: "Roboto", sans-serif;
+  @media (max-width: 768px) {
+    width: 500px;
+  }
+
+  @media (max-height: 768px) {
+    width: 500px;
+  }
 `;
 
 const HeaderText = styled.div`
@@ -84,6 +99,13 @@ const Content = styled.div`
   font-size: 20px;
   align-items: center;
   justify-content: center;
+  @media (max-width: 768px) {
+    width: 500px;
+  }
+
+  @media (max-height: 768px) {
+    width: 500px;
+  }
 `;
 
 const Footer = styled.div`
@@ -96,6 +118,14 @@ const Footer = styled.div`
   position: absolute;
   margin-top: 390px;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 500px;
+  }
+
+  @media (max-height: 768px) {
+    width: 500px;
+  }
 `;
 
 const EnhancedButton = styled.button`

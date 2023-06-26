@@ -164,9 +164,9 @@ const LeftSide = styled.div`
     bottom: 0%;
   }
 
-  @media (max-width: 1350px) {
+  /* @media (max-width: 1350px) {
     display: none;
-  }
+  } */
 `;
 
 const EnhancedButton = styled.div`
@@ -285,9 +285,9 @@ const RightSide = styled.div`
     bottom: 0%;
   }
 
-  @media (max-width: 1350px) {
+  /* @media (max-width: 1350px) {
     display: none;
-  }
+  } */
 `;
 
 export const Home = () => {

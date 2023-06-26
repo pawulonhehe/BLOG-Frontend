@@ -37,8 +37,18 @@ const Title = styled.div`
   height: 24px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   margin-top: 50px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 50px;
+    width: 80%;
+  }
+
+  @media (max-height: 768px) {
+    margin-bottom: 50px;
+    width: 80%;
+  }
 `;
 
 const TitleOfSite = styled.div`
@@ -70,6 +80,11 @@ const Row = styled.div`
   margin-top: 5px;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    margin-left: 10%;
+  }
 `;
 
 const EnhancedButton = styled.button`
@@ -113,6 +128,10 @@ const EnhancedInput = styled.input`
     border: none;
     outline: none;
     background: #dddddd;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
   }
 `;
 
