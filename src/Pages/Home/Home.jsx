@@ -357,6 +357,7 @@ export const Home = () => {
                   date={post.time_date}
                   likes={post.likes}
                   category_name={post.category_name}
+                  id={post.id}
                 />
               ))}
             </>

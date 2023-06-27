@@ -45,5 +45,4 @@ const Tag = (props) => {
 
 export default Tag;
 
-//  what can i do:
-//  i can try to move logic inside TagManager file
+// try to move logic inside TagManager file

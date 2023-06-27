@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaHeart } from "react-icons/fa";
 import moment from "moment";
+import axios from "axios";
 
 const Container = styled.div`
   display: flex;
@@ -192,6 +193,30 @@ const AuthorContainer = styled.div`
 
 const Post = (props) => {
   const dateString = moment(props.date).endOf("day").fromNow();
+
+  const handleLikePost = (post) => {
+    axios
+      .post(
+        `http://localhost:1234/posts/likePost/${post.id}`,
+        {
+          likes: post.likes + 1,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  console.log(props);
+
   return (
     <Container>
       <Header>
@@ -203,7 +228,7 @@ const Post = (props) => {
       </Header>
       <Content>{props.content}</Content>
       <Footer>
-        <EnhancedButton>
+        <EnhancedButton key={props.id} onClick={() => handleLikePost(props)}>
           <Logo>
             <FaHeart size={25} />
           </Logo>
