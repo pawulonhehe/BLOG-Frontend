@@ -118,7 +118,7 @@ const LiveScore = () => {
               height="30px"
             />
           </FlagContainer>
-          <CountryName>Portugalia</CountryName>
+          <CountryName>Portugal</CountryName>
         </Column>
       </Row>
       <Row>

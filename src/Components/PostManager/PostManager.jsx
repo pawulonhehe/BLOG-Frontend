@@ -1,6 +1,46 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import Select from "react-select";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #424242;
+  width: 60%;
+  height: 500px;
+  border-radius: 20px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const EnhancedTitleInput = styled.input`
+  background: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+`;
+
+const EnhancedContentInput = styled.textarea`
+  background: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  width: 250px;
+  height: 100px;
+  border-radius: 10px;
+`;
+
+const EnhancedSelect = styled(Select)`
+  background: #fff;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+`;
 
 const PostManager = () => {
   const [title, setTitle] = React.useState();
@@ -59,31 +99,25 @@ const PostManager = () => {
   console.log(selectedTags);
 
   return (
-    <div>
+    <Container>
       <form>
-        <input type="text" placeholder="title" onChange={changeTitle} />
-        <input type="text" placeholder="content" onChange={changeContent} />
-
-        <Select
+        <EnhancedTitleInput
+          type="text"
+          placeholder="title"
+          onChange={changeTitle}
+        />
+        <EnhancedContentInput
+          type="text"
+          placeholder="content"
+          onChange={changeContent}
+        />
+        <EnhancedSelect
           value={selectedTags}
           onChange={(selectedOptions) => {
             setSelectedTags(selectedOptions);
           }}
           options={tags?.map((tag) => ({ value: tag._id, label: tag.name }))}
         />
-
-        {/* <select
-          value={tags}
-          onChange={(e) => {
-            setTags(e.target.value);
-          }}
-        >
-          {tags &&
-            tags.map((tag) => {
-              return <option value={tag._id}>{tag.name}</option>;
-            })}
-        </select> */}
-
         <input
           type="file"
           placeholder="zdjecie"
@@ -93,7 +127,7 @@ const PostManager = () => {
         />
         <button onClick={handleAddPost}>Add post</button>
       </form>
-    </div>
+    </Container>
   );
 };
 

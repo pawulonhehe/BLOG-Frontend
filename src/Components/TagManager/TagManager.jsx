@@ -125,6 +125,7 @@ const TagManager = () => {
         <Title>Stwórz nowy tag</Title>
         <AddTagContainer>
           <EnhancedInput
+            maxLength="9"
             placeholder="Nazwa tagu"
             type="text"
             onChange={(e) => {

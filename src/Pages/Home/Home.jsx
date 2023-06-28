@@ -8,6 +8,7 @@ import LeftAdContainer from "../../Components/LeftAdContainer/LeftAdContainer";
 import { FaFire, FaHome } from "react-icons/fa";
 import axios from "axios";
 import { useEffect } from "react";
+import jwt_decode from "jwt-decode";
 
 const Header = styled.div`
   display: flex;
@@ -40,7 +41,7 @@ const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   width: 250px;
   height: 100%;
 `;
@@ -320,12 +321,25 @@ export const Home = () => {
       });
   }, []);
 
+  var token = localStorage.getItem("token");
+  var decodedToken = jwt_decode(token);
+
+  const isAdmin = () => {
+    if (decodedToken.ismod === 1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <>
       <Header>
         <HeaderLogo>EPICGOALZ</HeaderLogo>
         <ButtonsContainer>
-          <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
+          {isAdmin() ? (
+            <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
+          ) : null}
           <LoginButton onClick={NavigateToLogin}>Log in</LoginButton>
         </ButtonsContainer>
       </Header>

@@ -72,6 +72,7 @@ const MainContainer = styled.div`
   background: #d9d9d9;
   color: #c9c9c9;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const Cms = () => {

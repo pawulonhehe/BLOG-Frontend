@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FaHeart } from "react-icons/fa";
 import moment from "moment";
 import axios from "axios";
+import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -194,6 +195,13 @@ const AuthorContainer = styled.div`
 const Post = (props) => {
   const dateString = moment(props.date).endOf("day").fromNow();
 
+  const [likes, setLikes] = useState(parseInt(props.likes));
+  const hasLiked = localStorage.getItem(`liked-${props.id}`);
+
+  if (hasLiked) {
+    // something to block liking here
+  }
+
   const handleLikePost = (post) => {
     axios
       .post(
@@ -209,13 +217,13 @@ const Post = (props) => {
       )
       .then((res) => {
         console.log(res);
+        setLikes(likes + 1);
+        localStorage.setItem(`liked-${props.id}`, true);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  console.log(props);
 
   return (
     <Container>
@@ -232,7 +240,7 @@ const Post = (props) => {
           <Logo>
             <FaHeart size={25} />
           </Logo>
-          <LikeCounter>{props.likes}</LikeCounter>
+          <LikeCounter>{likes}</LikeCounter>
           LIKE
         </EnhancedButton>
         <AuthorContainer>{props.author}</AuthorContainer>
