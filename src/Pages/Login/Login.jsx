@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaLock, FaMailBulk } from "react-icons/fa";
+import WaterMark from "../../Components/WaterMark/WaterMark";
 
 const Container = styled.div`
   display: flex;
@@ -215,6 +216,7 @@ export const Login = () => {
         </FormContainer>
       </LoginContainer>
       <Background />
+      <WaterMark>Designed by Paweł Kardaś</WaterMark>
     </Container>
   );
 };

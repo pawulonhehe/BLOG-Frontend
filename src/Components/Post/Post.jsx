@@ -86,7 +86,7 @@ const HeaderDate = styled.div`
   margin-left: 60px;
 `;
 
-const Content = styled.div`
+const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 750px;
@@ -97,10 +97,11 @@ const Content = styled.div`
   background: url("https://i.imgur.com/APY338v.png") center bottom;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 20px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
   @media (max-width: 768px) {
     width: 500px;
   }
@@ -108,6 +109,12 @@ const Content = styled.div`
   @media (max-height: 768px) {
     width: 500px;
   }
+`;
+
+const Content = styled.div`
+  text-align: center;
+  margin-bottom: 55px;
+  width: 90%;
 `;
 
 const Footer = styled.div`
@@ -178,7 +185,7 @@ const LikeCounter = styled.div`
 
 const AuthorContainer = styled.div`
   display: flex;
-  width: 100px;
+  min-width: 100px;
   height: 30px;
   border-radius: 12px;
   align-items: center;
@@ -234,7 +241,9 @@ const Post = (props) => {
         </HeaderHashtag>
         <HeaderDate>{dateString}</HeaderDate>
       </Header>
-      <Content>{props.content}</Content>
+      <ContentContainer>
+        <Content>{props.content}</Content>
+      </ContentContainer>
       <Footer>
         <EnhancedButton key={props.id} onClick={() => handleLikePost(props)}>
           <Logo>

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import TagManager from "../../Components/TagManager/TagManager";
 import PostManager from "../../Components/PostManager/PostManager";
+import { useNavigate } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 const Container = styled.div`
   display: flex;
@@ -33,6 +35,12 @@ const EnhancedButton = styled.button`
   font-weight: 900;
   margin-top: 10px;
   border-radius: 10px;
+
+  &:hover {
+    cursor: pointer;
+    background: #ff3737;
+    color: #fff;
+  }
 `;
 
 const UserContainer = styled.div`
@@ -77,6 +85,7 @@ const MainContainer = styled.div`
 
 export const Cms = () => {
   const [currentPage, setCurrentPage] = React.useState(false);
+  const navigate = useNavigate();
 
   const changeCurrentPageToPosts = () => {
     setCurrentPage(true);
@@ -86,7 +95,13 @@ export const Cms = () => {
     setCurrentPage(false);
   };
 
-  console.log(currentPage);
+  const changeCurrentPageToHome = () => {
+    navigate("/");
+  };
+
+  var token = localStorage.getItem("token");
+  var decodedToken = jwt_decode(token);
+
   return (
     <Container>
       <LeftSideMenu>
@@ -97,15 +112,16 @@ export const Cms = () => {
             width="50px"
             height="50px"
           />
-          <p>pawulon</p>
+          <p>{decodedToken.name}</p>
         </UserContainer>
         <EnhancedButton onClick={changeCurrentPageToPosts}>
           Posts
         </EnhancedButton>
         <EnhancedButton onClick={changeCurrentPageToTags}>Tags</EnhancedButton>
+        <EnhancedButton onClick={changeCurrentPageToHome}>Home</EnhancedButton>
       </LeftSideMenu>
       <CenterMenu>
-        <Dashboard>some stats</Dashboard>
+        <Dashboard>some fancy stats to add here</Dashboard>
         <MainContainer>
           {currentPage ? <PostManager /> : <TagManager />}
         </MainContainer>

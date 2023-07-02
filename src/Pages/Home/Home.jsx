@@ -5,7 +5,7 @@ import Post from "../../Components/Post/Post";
 import LiveScore from "../../Components/LiveScore/LiveScore";
 import AdContainer from "../../Components/AdContainer/AdContainer";
 import LeftAdContainer from "../../Components/LeftAdContainer/LeftAdContainer";
-import { FaFire, FaHome } from "react-icons/fa";
+import { FaFire, FaHome, FaSmile } from "react-icons/fa";
 import axios from "axios";
 import { useEffect } from "react";
 import jwt_decode from "jwt-decode";
@@ -291,6 +291,14 @@ const RightSide = styled.div`
   } */
 `;
 
+const EnhancedH1 = styled.h1`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  color: #fff;
+  margin-top: 50px;
+`;
+
 export const Home = () => {
   const navigate = useNavigate();
   const [postsType, setPostsType] = React.useState(true);
@@ -367,7 +375,7 @@ export const Home = () => {
                   key={post.id}
                   title={post.title}
                   content={post.content}
-                  author={post.author}
+                  author={post.name}
                   date={post.time_date}
                   likes={post.likes}
                   category_name={post.category_name}
@@ -376,7 +384,9 @@ export const Home = () => {
               ))}
             </>
           ) : (
-            <h1>For you</h1>
+            <EnhancedH1>
+              Expect some cool stuff here soon! <FaSmile />
+            </EnhancedH1>
           )}
         </Content>
         <RightSide>
