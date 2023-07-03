@@ -23,6 +23,22 @@ const Container = styled.div`
   @media (max-height: 768px) {
     width: 500px;
   }
+
+  @media (max-width: 500px) {
+    width: 300px;
+
+    & > div {
+      width: 300px;
+    }
+  }
+
+  @media (max-height: 500px) {
+    width: 300px;
+
+    & > div {
+      width: 300px;
+    }
+  }
 `;
 
 const Header = styled.div`
@@ -209,12 +225,11 @@ const Post = (props) => {
 
   const [likes, setLikes] = useState(parseInt(props.likes));
   const hasLiked = localStorage.getItem(`liked-${props.id}`);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   if (hasLiked) {
-    // something to block liking here
+    // something to prevent double liking single post
   }
-
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
