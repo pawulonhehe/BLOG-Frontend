@@ -231,13 +231,6 @@ export const Home = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (!token) {
-  //     NavigateToLogin();
-  //   }
-  // }, []);
-
   var token = localStorage.getItem("token");
   const isAdmin = token ? jwt_decode(token).ismod === 1 : false;
 
@@ -246,11 +239,6 @@ export const Home = () => {
       <Header>
         <HeaderLogo>EPICGOALZ</HeaderLogo>
         <ButtonsContainer>
-          {/* {isAdmin() ? (
-            <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
-          ) : null}
-          <LoginButton onClick={NavigateToLogin}>Log in</LoginButton> */}
-
           {isAdmin ? (
             <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
           ) : null}
