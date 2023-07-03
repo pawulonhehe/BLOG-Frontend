@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { FaHeart } from "react-icons/fa";
 import moment from "moment";
@@ -155,6 +155,11 @@ const EnhancedButton = styled.button`
     background: #ff3737;
     color: #fff;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `;
 
 const Logo = styled.svg`
@@ -209,6 +214,13 @@ const Post = (props) => {
     // something to block liking here
   }
 
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsButtonDisabled(!token);
+  }, []);
+
   const handleLikePost = (post) => {
     axios
       .post(
@@ -245,7 +257,11 @@ const Post = (props) => {
         <Content>{props.content}</Content>
       </ContentContainer>
       <Footer>
-        <EnhancedButton key={props.id} onClick={() => handleLikePost(props)}>
+        <EnhancedButton
+          disabled={isButtonDisabled}
+          key={props.id}
+          onClick={() => handleLikePost(props)}
+        >
           <Logo>
             <FaHeart size={25} />
           </Logo>

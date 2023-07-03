@@ -69,14 +69,38 @@ const Container = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
-  /* background: #969696; */
   margin-top: 80px;
   justify-content: center;
   align-items: center;
   margin-right: 2222px;
 `;
 
+const mediaQueriesL = [
+  { max: 1850, left: 10 },
+  { max: 1800, left: 9 },
+  { max: 1750, left: 8 },
+  { max: 1700, left: 7 },
+  { max: 1650, left: 6 },
+  { max: 1600, left: 5 },
+  { max: 1550, left: 4 },
+  { max: 1500, left: 2 },
+  { max: 1450, left: -1 },
+  { max: 1400, left: -3 },
+];
+
+const mediaQueryStylesL = mediaQueriesL.map(
+  ({ max, left }) => `
+    @media (max-width: ${max}px) {
+      position: fixed;
+      top: 0%;
+      left: ${left}%;
+      bottom: 0%;
+    }
+`
+);
+
 const LeftSide = styled.div`
+  ${mediaQueryStylesL.join("")}
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -88,86 +112,51 @@ const LeftSide = styled.div`
   margin-top: 80px;
   z-index: 2;
 
-  /* @media (max-width: 1520px) {
-    position: relative;
-    left: 0%;
-    margin-top: 0px;
-    margin-right: 75px;
-  } */
-
-  @media (max-width: 1850px) {
-    position: fixed;
-    top: 0%;
-    left: 10%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1800px) {
-    position: fixed;
-    top: 0%;
-    left: 9%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1750px) {
-    position: fixed;
-    top: 0%;
-    left: 8%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1700px) {
-    position: fixed;
-    top: 0%;
-    left: 7%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1650px) {
-    position: fixed;
-    top: 0%;
-    left: 6%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1600px) {
-    position: fixed;
-    top: 0%;
-    left: 5%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1550px) {
-    position: fixed;
-    top: 0%;
-    left: 4%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1500px) {
-    position: fixed;
-    top: 0%;
-    left: 3%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1450px) {
-    position: fixed;
-    top: 0%;
-    left: 1%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1400px) {
-    position: fixed;
-    top: 0%;
-    left: -1%;
-    bottom: 0%;
-  }
-
-  /* @media (max-width: 1350px) {
+  @media (max-width: 1360px) {
     display: none;
-  } */
+  }
+`;
+
+const mediaQueriesR = [
+  { max: 1850, right: 10 },
+  { max: 1800, right: 9 },
+  { max: 1750, right: 8 },
+  { max: 1700, right: 7 },
+  { max: 1650, right: 6 },
+  { max: 1600, right: 5 },
+  { max: 1550, right: 4 },
+  { max: 1500, right: 2 },
+  { max: 1450, right: -1 },
+  { max: 1400, right: -3 },
+];
+
+const mediaQueryStylesR = mediaQueriesR.map(
+  ({ max, right }) => `
+    @media (max-width: ${max}px) {
+      position: fixed;
+      top: 0%;
+      right: ${right}%;
+      bottom: 0%;
+    }
+`
+);
+
+const RightSide = styled.div`
+  ${mediaQueryStylesR.join("")}
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 100%;
+  top: 0%;
+  right: 11%;
+  position: fixed;
+  margin-top: 80px;
+  align-items: center;
+  z-index: 2;
+
+  @media (max-width: 1360px) {
+    display: none;
+  }
 `;
 
 const EnhancedButton = styled.div`
@@ -202,93 +191,6 @@ const Content = styled.div`
   height: 100%;
   align-items: center;
   margin-right: 50px;
-`;
-
-const RightSide = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 350px;
-  height: 100%;
-  top: 0%;
-  right: 11%;
-  position: fixed;
-  margin-top: 80px;
-  align-items: center;
-  z-index: 2;
-
-  @media (max-width: 1850px) {
-    position: fixed;
-    top: 0%;
-    right: 10%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1800px) {
-    position: fixed;
-    top: 0%;
-    right: 9%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1750px) {
-    position: fixed;
-    top: 0%;
-    right: 8%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1700px) {
-    position: fixed;
-    top: 0%;
-    right: 7%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1650px) {
-    position: fixed;
-    top: 0%;
-    right: 6%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1600px) {
-    position: fixed;
-    top: 0%;
-    right: 5%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1550px) {
-    position: fixed;
-    top: 0%;
-    right: 4%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1500px) {
-    position: fixed;
-    top: 0%;
-    right: 3%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1450px) {
-    position: fixed;
-    top: 0%;
-    right: 1%;
-    bottom: 0%;
-  }
-
-  @media (max-width: 1400px) {
-    position: fixed;
-    top: 0%;
-    right: -1%;
-    bottom: 0%;
-  }
-
-  /* @media (max-width: 1350px) {
-    display: none;
-  } */
 `;
 
 const EnhancedH1 = styled.h1`
@@ -329,23 +231,27 @@ export const Home = () => {
       });
   }, []);
 
-  var token = localStorage.getItem("token");
-  var decodedToken = jwt_decode(token);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (!token) {
+  //     NavigateToLogin();
+  //   }
+  // }, []);
 
-  const isAdmin = () => {
-    if (decodedToken.ismod === 1) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  var token = localStorage.getItem("token");
+  const isAdmin = token ? jwt_decode(token).ismod === 1 : false;
 
   return (
     <>
       <Header>
         <HeaderLogo>EPICGOALZ</HeaderLogo>
         <ButtonsContainer>
-          {isAdmin() ? (
+          {/* {isAdmin() ? (
+            <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
+          ) : null}
+          <LoginButton onClick={NavigateToLogin}>Log in</LoginButton> */}
+
+          {isAdmin ? (
             <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
           ) : null}
           <LoginButton onClick={NavigateToLogin}>Log in</LoginButton>
