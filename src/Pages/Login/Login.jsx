@@ -191,6 +191,7 @@ export const Login = () => {
                 name="email"
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="e-mail"
+                data-cy="email-input"
               />
             </Row>
             <Row>
@@ -202,10 +203,13 @@ export const Login = () => {
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="hasło"
+                data-cy="password-input"
               />
             </Row>
             <Row>
-              <EnhancedButton onClick={handleSubmit}>Apply</EnhancedButton>
+              <EnhancedButton data-cy="submit-button" onClick={handleSubmit}>
+                Apply
+              </EnhancedButton>
             </Row>
             <Row>
               <RegisterButton onClick={() => navigate("/register")}>

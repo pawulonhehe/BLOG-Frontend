@@ -262,7 +262,7 @@ const Post = (props) => {
   return (
     <Container>
       <Header>
-        <HeaderText>{props.title}</HeaderText>
+        <HeaderText data-cy="post-title">{props.title}</HeaderText>
         <HeaderHashtag>
           <HashtagContainer>{props.category_name}</HashtagContainer>
         </HeaderHashtag>

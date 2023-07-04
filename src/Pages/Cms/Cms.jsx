@@ -114,11 +114,14 @@ export const Cms = () => {
           />
           <p>{decodedToken.name}</p>
         </UserContainer>
-        <EnhancedButton onClick={changeCurrentPageToPosts}>
+        <EnhancedButton
+          data-cy="posts-button"
+          onClick={changeCurrentPageToPosts}
+        >
           Posts
         </EnhancedButton>
         <EnhancedButton onClick={changeCurrentPageToTags}>Tags</EnhancedButton>
-        <EnhancedButton onClick={changeCurrentPageToHome}>Home</EnhancedButton>
+        <EnhancedButton onClick={changeCurrentPageToHome} data-cy="home-button">Home</EnhancedButton>
       </LeftSideMenu>
       <CenterMenu>
         <Dashboard>some fancy stats to add here</Dashboard>

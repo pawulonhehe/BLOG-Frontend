@@ -240,9 +240,13 @@ export const Home = () => {
         <HeaderLogo>EPICGOALZ</HeaderLogo>
         <ButtonsContainer>
           {isAdmin ? (
-            <LoginButton onClick={NavigateToCms}>CMS</LoginButton>
+            <LoginButton data-cy="cms-button" onClick={NavigateToCms}>
+              CMS
+            </LoginButton>
           ) : null}
-          <LoginButton onClick={NavigateToLogin}>Log in</LoginButton>
+          <LoginButton data-cy="login-button" onClick={NavigateToLogin}>
+            Log in
+          </LoginButton>
         </ButtonsContainer>
       </Header>
       <Container>

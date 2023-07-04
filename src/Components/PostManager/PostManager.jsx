@@ -125,6 +125,7 @@ const PostManager = () => {
               onChange={(e) => {
                 setTitle(e.target.value);
               }}
+              data-cy="title-input"
             />
           </Row>
           <Row>
@@ -134,6 +135,7 @@ const PostManager = () => {
               onChange={(e) => {
                 setContent(e.target.value);
               }}
+              data-cy="content-input"
             />
           </Row>
           <Row>
@@ -141,6 +143,7 @@ const PostManager = () => {
               onChange={(e) => {
                 setSelectedTags(e.target.value);
               }}
+              data-cy="select-input"
             >
               <option value="0">Wybierz tagi</option>
               {tags &&
@@ -160,6 +163,7 @@ const PostManager = () => {
               onChange={(newValue) => {
                 setImage(newValue);
               }}
+              data-cy="submit-button"
             />
           </Row>
           <Row>
