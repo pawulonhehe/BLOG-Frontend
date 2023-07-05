@@ -234,6 +234,13 @@ export const Home = () => {
   var token = localStorage.getItem("token");
   const isAdmin = token ? jwt_decode(token).ismod === 1 : false;
 
+  const isLoggedIn = token ? true : false;
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
+
   return (
     <>
       <Header>
@@ -244,9 +251,15 @@ export const Home = () => {
               CMS
             </LoginButton>
           ) : null}
-          <LoginButton data-cy="login-button" onClick={NavigateToLogin}>
-            Log in
-          </LoginButton>
+          {isLoggedIn ? (
+            <LoginButton data-cy="logout-button" onClick={logout}>
+              Log out
+            </LoginButton>
+          ) : (
+            <LoginButton data-cy="login-button" onClick={NavigateToLogin}>
+              Log in
+            </LoginButton>
+          )}
         </ButtonsContainer>
       </Header>
       <Container>
